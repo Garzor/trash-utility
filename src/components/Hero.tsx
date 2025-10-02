@@ -44,7 +44,7 @@ const Hero = () => {
         <img
           src="/fatmascot.png"
           alt="Fat Mascot"
-          className="h-48 sm:h-56 lg:h-64 object-contain drop-shadow-lg hover:scale-105 transition-transform duration-200"
+          className="h-48 sm:h-56 lg:h-64 object-contain drop-shadow-lg hover:scale-105 transition-transform duration-200 breathe"
         />
       </div>
       
@@ -53,7 +53,7 @@ const Hero = () => {
         <img
           src="/blackmascot.png"
           alt="Black Mascot"
-          className="h-56 sm:h-64 lg:h-72 object-contain drop-shadow-lg hover:scale-105 transition-transform duration-200"
+          className="h-56 sm:h-64 lg:h-72 object-contain drop-shadow-lg hover:scale-105 transition-transform duration-200 breathe"
         />
       </div>
       
