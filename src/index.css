@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Pump Crew Design System - Pixar/Animated Show Vibe */
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --neon-green: 123 84% 57%;      /* #22C55E */
+    --vibrant-purple: 258 90% 66%;  /* #7C3AED */
+    --electric-blue: 199 89% 64%;   /* #38BDF8 */
+    --sunshine-yellow: 45 96% 77%;  /* #FDE68A */
+    --pure-white: 0 0% 100%;        /* #FFFFFF */
+    --rich-black: 0 0% 4%;          /* #0A0A0A */
+    
+    /* Dark Gradient Background */
+    --bg-dark-start: 225 69% 7%;    /* #0B1020 */
+    --bg-dark-end: 225 50% 14%;     /* #181B2E */
+    
+    /* Semantic Tokens */
+    --background: var(--bg-dark-start);
+    --foreground: var(--pure-white);
+    --primary: var(--neon-green);
+    --primary-foreground: var(--rich-black);
+    --secondary: var(--vibrant-purple);
+    --secondary-foreground: var(--pure-white);
+    --accent: var(--electric-blue);
+    --accent-foreground: var(--rich-black);
+    --warning: var(--sunshine-yellow);
+    --warning-foreground: var(--rich-black);
+    
+    /* Interactive States */
+    --hover-scale: 1.03;
+    --hover-glow: 0 0 20px;
+    
+    /* Glass Morphism */
+    --glass-bg: hsl(var(--pure-white) / 0.1);
+    --glass-border: hsl(var(--pure-white) / 0.2);
+    --glass-blur: blur(12px);
+    
+    /* Shadows & Glows */
+    --shadow-soft: 0 4px 20px hsl(var(--rich-black) / 0.15);
+    --shadow-strong: 0 8px 40px hsl(var(--rich-black) / 0.3);
+    --glow-green: 0 0 20px hsl(var(--neon-green) / 0.4);
+    --glow-purple: 0 0 20px hsl(var(--vibrant-purple) / 0.4);
+    --glow-blue: 0 0 20px hsl(var(--electric-blue) / 0.4);
+    
+    /* Gradients */
+    --gradient-hero: radial-gradient(circle at center, hsl(var(--bg-dark-start)), hsl(var(--bg-dark-end)));
+    --gradient-water: linear-gradient(135deg, hsl(199 100% 92%), hsl(199 100% 85%));
+    --gradient-card: linear-gradient(135deg, hsl(var(--pure-white) / 0.1), hsl(var(--pure-white) / 0.05));
+    
+    /* Border Radius */
+    --radius-pill: 9999px;
+    --radius-card: 24px;
+    --radius-button: 16px;
+    
+    /* Typography */
+    --font-heading: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-0;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    background: var(--gradient-hero);
+    font-family: var(--font-body);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  /* Pump Crew Button Variants */
+  .btn-pump {
+    @apply px-8 py-4 bg-primary text-primary-foreground font-bold rounded-2xl;
+    @apply shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition-all duration-300;
+    @apply relative overflow-hidden;
+    box-shadow: var(--shadow-soft), inset 0 1px 0 hsl(var(--pure-white) / 0.2);
+  }
+  
+  .btn-pump:hover {
+    box-shadow: var(--glow-green), var(--shadow-strong);
+  }
+  
+  .btn-ghost {
+    @apply px-8 py-4 bg-transparent text-foreground font-bold rounded-2xl border-2;
+    @apply border-white/20 hover:border-white/40 hover:bg-white/10;
+    @apply transform hover:scale-[1.03] transition-all duration-300;
+  }
+  
+  .btn-secondary {
+    @apply px-8 py-4 bg-secondary text-secondary-foreground font-bold rounded-2xl;
+    @apply shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition-all duration-300;
+    box-shadow: var(--shadow-soft), inset 0 1px 0 hsl(var(--pure-white) / 0.2);
+  }
+  
+  .btn-secondary:hover {
+    box-shadow: var(--glow-purple), var(--shadow-strong);
+  }
+  
+  /* Glass Morphism Card */
+  .glass-card {
+    @apply rounded-3xl backdrop-blur-xl border;
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+    box-shadow: var(--shadow-soft);
+  }
+  
+  /* Character Glow Effects */
+  .char-glow-green {
+    @apply ring-4 ring-primary/30 drop-shadow-lg;
+    filter: drop-shadow(0 0 10px hsl(var(--neon-green) / 0.3));
+  }
+  
+  .char-glow-purple {
+    @apply ring-4 ring-secondary/30 drop-shadow-lg;
+    filter: drop-shadow(0 0 10px hsl(var(--vibrant-purple) / 0.3));
+  }
+  
+  .char-glow-blue {
+    @apply ring-4 ring-accent/30 drop-shadow-lg;
+    filter: drop-shadow(0 0 10px hsl(var(--electric-blue) / 0.3));
+  }
+  
+  /* Floating Animation */
+  .float-gentle {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .float-offset {
+    animation: float 3s ease-in-out infinite 1.5s;
+  }
+  
+  /* Hover Interactions */
+  .hover-lift {
+    @apply transform transition-all duration-300 hover:scale-105 hover:-translate-y-2;
+  }
+  
+  /* Scroll Snap */
+  .snap-x {
+    @apply flex overflow-x-auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .snap-x::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .snap-center {
+    scroll-snap-align: center;
+  }
+  
+  /* Marquee Animation */
+  .marquee {
+    animation: marquee 20s linear infinite;
+  }
+}
+
+@layer utilities {
+  /* Custom Gradients */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-water {
+    background: var(--gradient-water);
+  }
+  
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  /* Shadows */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+  
+  /* Glows */
+  .glow-green {
+    box-shadow: var(--glow-green);
+  }
+  
+  .glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+  
+  .glow-blue {
+    box-shadow: var(--glow-blue);
+  }
+}
+
+/* Keyframe Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes bob {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
