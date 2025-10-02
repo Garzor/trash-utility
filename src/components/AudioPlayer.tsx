@@ -81,7 +81,7 @@ const AudioPlayer = forwardRef<HTMLAudioElement, AudioPlayerProps>(({ autoPlay =
         preload="auto"
         onEnded={() => setIsPlaying(false)}
       >
-        <source src="/powerpoint-crazy-song-249520.mp3" type="audio/mpeg" />
+        <source src="/newsong.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
 

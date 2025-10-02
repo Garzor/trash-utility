@@ -10,12 +10,12 @@ const App = () => {
 
   const handleEnterSite = () => {
     // Create audio element and play immediately on user interaction
-    const audio = new Audio('/powerpoint-crazy-song-249520.mp3');
+    const audio = new Audio('/newsong.mp3');
     audio.loop = true;
     audio.volume = 0.5;
     
     audio.play().then(() => {
-      console.log('Direct audio play successful');
+      console.log('Newsong audio playing successfully');
       // Store the audio element reference for the AudioPlayer component
       if (audioRef.current) {
         audioRef.current.src = audio.src;
@@ -24,7 +24,7 @@ const App = () => {
       setMusicAutoPlay(true);
       setShowLoadingScreen(false);
     }).catch((error) => {
-      console.error('Direct audio play failed:', error);
+      console.error('Audio play failed:', error);
       // Fallback: still proceed to main site
       setMusicAutoPlay(true);
       setShowLoadingScreen(false);
