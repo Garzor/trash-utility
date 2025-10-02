@@ -24,6 +24,15 @@ const LoadingScreen = ({ onEnter }: LoadingScreenProps) => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(124,58,237,0.1)_100%)]" />
       </div>
 
+      {/* Loading Mascot */}
+      <div className="absolute bottom-4 sm:bottom-8 lg:bottom-12 left-4 sm:left-8 lg:left-12 z-20">
+        <img
+          src="/loadingmascot.png"
+          alt="Loading Mascot"
+          className="h-56 sm:h-64 lg:h-72 object-contain drop-shadow-lg hover:scale-105 transition-transform duration-200"
+        />
+      </div>
+
       {/* Main Content */}
       <div className="relative z-10 text-center">
         {/* Logo */}
