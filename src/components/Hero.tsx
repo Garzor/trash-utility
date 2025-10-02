@@ -8,6 +8,7 @@ import char5 from '@/assets/char_5.png';
 import char6 from '@/assets/char_6.png';
 import char7 from '@/assets/char_7.png';
 import char8 from '@/assets/char_8.png';
+import TrashRain from './TrashRain';
 
 const Hero = () => {
   const characters = [
@@ -34,6 +35,9 @@ const Hero = () => {
         <source src="/background.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
+      
+      {/* Trash Rain Effect */}
+      <TrashRain />
       
       {/* Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">

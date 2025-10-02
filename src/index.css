@@ -145,6 +145,31 @@
     animation: breathe 2s ease-in-out infinite;
   }
   
+  .trash-fall {
+    animation: trashFall linear infinite;
+  }
+  
+  /* Audio Player Slider */
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
   /* Hover Interactions */
   .hover-lift {
     @apply transform transition-all duration-300 hover:scale-105 hover:-translate-y-2;
@@ -243,5 +268,22 @@
   }
   50% {
     transform: scale(1.05);
+  }
+}
+
+@keyframes trashFall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(calc(100vh + 100px)) rotate(360deg);
+    opacity: 0;
   }
 }
