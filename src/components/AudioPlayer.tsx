@@ -1,9 +1,14 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, forwardRef } from 'react';
 
-const AudioPlayer = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+interface AudioPlayerProps {
+  autoPlay?: boolean;
+}
+
+const AudioPlayer = forwardRef<HTMLAudioElement, AudioPlayerProps>(({ autoPlay = false }, ref) => {
+  const [isPlaying, setIsPlaying] = useState(autoPlay);
   const [volume, setVolume] = useState(0.5);
   const [isMuted, setIsMuted] = useState(false);
+  const [showControls, setShowControls] = useState(!autoPlay); // Hide controls initially if auto-playing
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -12,6 +17,30 @@ const AudioPlayer = () => {
       audio.volume = isMuted ? 0 : volume;
     }
   }, [volume, isMuted]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio && autoPlay && !isPlaying) {
+      console.log('Attempting auto-play...');
+      // Small delay to ensure the component is fully mounted
+      const timer = setTimeout(() => {
+        audio.play().then(() => {
+          console.log('Auto-play successful');
+          setIsPlaying(true);
+          // Show controls after successful auto-play
+          setTimeout(() => setShowControls(true), 1000);
+        }).catch((error) => {
+          console.error('Auto-play failed:', error);
+          // If auto-play fails, set playing to false so user can manually start
+          setIsPlaying(false);
+          // Show controls if auto-play fails
+          setShowControls(true);
+        });
+      }, 100);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [autoPlay, isPlaying]);
 
   const togglePlay = () => {
     const audio = audioRef.current;
@@ -38,7 +67,16 @@ const AudioPlayer = () => {
   return (
     <div className="fixed bottom-4 right-4 z-50">
       <audio
-        ref={audioRef}
+        ref={(node) => {
+          audioRef.current = node;
+          if (ref) {
+            if (typeof ref === 'function') {
+              ref(node);
+            } else {
+              ref.current = node;
+            }
+          }
+        }}
         loop
         preload="auto"
         onEnded={() => setIsPlaying(false)}
@@ -47,7 +85,8 @@ const AudioPlayer = () => {
         Your browser does not support the audio element.
       </audio>
 
-      <div className="glass-card p-4 flex items-center gap-3">
+      {showControls && (
+        <div className="glass-card p-4 flex items-center gap-3">
         {/* Play/Pause Button */}
         <button
           onClick={togglePlay}
@@ -93,8 +132,9 @@ const AudioPlayer = () => {
           />
         </div>
       </div>
+      )}
     </div>
   );
-};
+});
 
 export default AudioPlayer;

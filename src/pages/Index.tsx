@@ -6,7 +6,6 @@ import Cast from '@/components/Cast';
 import Media from '@/components/Media';
 import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
-import AudioPlayer from '@/components/AudioPlayer';
 
 const Index = () => {
   return (
@@ -21,7 +20,6 @@ const Index = () => {
         <FinalCTA />
       </main>
       <Footer />
-      <AudioPlayer />
     </div>
   );
 };
