@@ -39,6 +39,24 @@ const Hero = () => {
       {/* Trash Rain Effect */}
       <TrashRain />
       
+      {/* Fat Mascot */}
+      <div className="absolute bottom-0 left-4 sm:left-8 lg:left-12 z-20">
+        <img
+          src="/fatmascot.png"
+          alt="Fat Mascot"
+          className="h-48 sm:h-56 lg:h-64 object-contain drop-shadow-lg hover:scale-105 transition-transform duration-200"
+        />
+      </div>
+      
+      {/* Black Mascot */}
+      <div className="absolute bottom-0 right-4 sm:right-8 lg:right-12 z-20">
+        <img
+          src="/blackmascot.png"
+          alt="Black Mascot"
+          className="h-56 sm:h-64 lg:h-72 object-contain drop-shadow-lg hover:scale-105 transition-transform duration-200"
+        />
+      </div>
+      
       {/* Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
         {/* Logo */}
