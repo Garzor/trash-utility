@@ -142,7 +142,7 @@
   }
   
   .breathe {
-    animation: breathe 2s ease-in-out infinite;
+    animation: breathe 8s ease-in-out infinite;
   }
   
   .trash-fall {
@@ -163,6 +163,7 @@
     animation: gridMove 2s linear infinite, gridPulse 0.5s ease-in-out infinite alternate;
     filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.5));
   }
+  
   
   /* Audio Player Slider */
   .slider::-webkit-slider-thumb {
@@ -334,3 +335,4 @@
     filter: drop-shadow(0 0 20px rgba(124, 58, 237, 0.8));
   }
 }
+

@@ -31,7 +31,8 @@ const LoadingScreen = ({ onEnter }: LoadingScreenProps) => {
           <img 
             src={logoTrashUtility} 
             alt="Trash Utility Logo" 
-            className="h-32 sm:h-40 lg:h-48 object-contain mx-auto drop-shadow-2xl animate-pulse"
+            className="h-48 sm:h-56 lg:h-64 object-contain mx-auto drop-shadow-2xl cursor-pointer hover:scale-105 transition-transform duration-200"
+            onClick={handleEnter}
           />
         </div>
 
