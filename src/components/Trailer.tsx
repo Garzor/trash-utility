@@ -26,21 +26,23 @@ const Trailer = () => {
               TRASH UTILITY
             </h2>
 
-          {/* Framed Poster */}
-          <div className="relative inline-block max-w-4xl">
+          {/* Framed Video */}
+          <div className="relative inline-block max-w-3xl w-full">
             {/* Outer Frame */}
             <div className="bg-gradient-to-br from-black to-black p-3 sm:p-6 rounded-3xl shadow-strong">
               {/* Inner Frame */}
               <div className="bg-gradient-to-br from-vibrant-purple to-vibrant-purple p-2 sm:p-4 rounded-2xl">
                 {/* Video Container */}
-                <div className="relative overflow-hidden rounded-xl bg-black aspect-video">
+                <div className="relative overflow-hidden rounded-xl bg-black aspect-square w-full">
                   <video
                     className="w-full h-full object-cover"
-                    controls
-                    preload="auto"
+                    autoPlay
+                    loop
                     muted
+                    playsInline
+                    preload="auto"
                   >
-                    <source src="/PCVID.mp4" type="video/mp4" />
+                    <source src="/2ndvid.mp4?v=1" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
