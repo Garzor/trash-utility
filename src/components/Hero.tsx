@@ -1,5 +1,5 @@
-import bgHero from '/SITEBGPC.png';
-import logoPCLOGO from '/PCLOGO.png';
+// Removed static background image import - now using video background
+import logoTrashUtility from '/ChatGPT Image Oct 2, 2025 at 03_33_40 PM.png';
 import char1 from '/ChatGPT Image Sep 12, 2025 at 08_16_08 PM.png';
 import char2 from '/ChatGPT Image Sep 12, 2025 at 08_21_43 PM.png';
 import char3 from '@/assets/char_3.png';
@@ -23,11 +23,16 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden">
-      {/* Background */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${bgHero})` }}
-      />
+      {/* Background Video */}
+      <video 
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+      >
+        <source src="/background.mp4" type="video/mp4" />
+      </video>
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
       
       {/* Content Container */}
@@ -35,9 +40,9 @@ const Hero = () => {
         {/* Logo */}
         <div className="text-center mb-8">
           <img 
-            src={logoPCLOGO} 
-            alt="Pump Crew Logo" 
-            className="h-24 sm:h-36 lg:h-48 object-contain mx-auto drop-shadow-2xl"
+            src={logoTrashUtility} 
+            alt="Trash Utility Logo" 
+            className="h-48 sm:h-64 lg:h-80 object-contain mx-auto drop-shadow-2xl breathe"
           />
           
           {/* Subheading */}

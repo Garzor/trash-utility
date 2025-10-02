@@ -141,6 +141,10 @@
     animation: float 3s ease-in-out infinite 1.5s;
   }
   
+  .breathe {
+    animation: breathe 2s ease-in-out infinite;
+  }
+  
   /* Hover Interactions */
   .hover-lift {
     @apply transform transition-all duration-300 hover:scale-105 hover:-translate-y-2;
@@ -230,5 +234,14 @@
   }
   50% {
     transform: translateY(-4px);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
   }
 }

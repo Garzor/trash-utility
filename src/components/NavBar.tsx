@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import logoPCLOGO from '/PCLOGO.png';
+import logoTrashUtility from '/ChatGPT Image Oct 2, 2025 at 03_33_40 PM.png';
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -46,9 +46,9 @@ const NavBar = () => {
           {/* Centered Logo */}
           <div className="flex items-center justify-center flex-1 lg:flex-none">
             <img 
-              src={logoPCLOGO} 
-              alt="Pump Crew Logo" 
-              className="h-10 sm:h-12 object-contain"
+              src={logoTrashUtility} 
+              alt="Trash Utility Logo" 
+              className="h-12 sm:h-16 object-contain"
             />
           </div>
 
