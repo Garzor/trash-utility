@@ -23,13 +23,13 @@ const Trailer = () => {
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-12">
-              MEET THE CREW
+              TRASH UTILITY
             </h2>
 
           {/* Framed Poster */}
           <div className="relative inline-block max-w-4xl">
             {/* Outer Frame */}
-            <div className="bg-gradient-to-br from-neon-green to-neon-green p-3 sm:p-6 rounded-3xl shadow-strong">
+            <div className="bg-gradient-to-br from-black to-black p-3 sm:p-6 rounded-3xl shadow-strong">
               {/* Inner Frame */}
               <div className="bg-gradient-to-br from-vibrant-purple to-vibrant-purple p-2 sm:p-4 rounded-2xl">
                 {/* Video Container */}

@@ -82,14 +82,14 @@
 @layer components {
   /* Pump Crew Button Variants */
   .btn-pump {
-    @apply px-8 py-4 bg-primary text-primary-foreground font-bold rounded-2xl;
+    @apply px-8 py-4 bg-secondary text-secondary-foreground font-bold rounded-2xl;
     @apply shadow-lg hover:shadow-xl transform hover:scale-[1.03] transition-all duration-300;
     @apply relative overflow-hidden;
     box-shadow: var(--shadow-soft), inset 0 1px 0 hsl(var(--pure-white) / 0.2);
   }
   
   .btn-pump:hover {
-    box-shadow: var(--glow-green), var(--shadow-strong);
+    box-shadow: var(--glow-purple), var(--shadow-strong);
   }
   
   .btn-ghost {
