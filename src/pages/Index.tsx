@@ -1,11 +1,8 @@
 import NavBar from '@/components/NavBar';
 import Hero from '@/components/Hero';
 import Trailer from '@/components/Trailer';
-import Episodes from '@/components/Episodes';
-import Cast from '@/components/Cast';
-import Media from '@/components/Media';
-import FinalCTA from '@/components/FinalCTA';
-import Footer from '@/components/Footer';
+import TrashUtilitySection from '@/components/TrashUtilitySection';
+import JoinTrashSection from '@/components/JoinTrashSection';
 
 const Index = () => {
   return (
@@ -14,12 +11,9 @@ const Index = () => {
       <main>
         <Hero />
         <Trailer />
-        <Episodes />
-        <Cast />
-        {/* <Media /> */}
-        <FinalCTA />
+        <TrashUtilitySection />
+        <JoinTrashSection />
       </main>
-      <Footer />
     </div>
   );
 };

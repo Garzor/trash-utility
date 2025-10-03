@@ -69,7 +69,7 @@ const Hero = () => {
           
           {/* Subheading */}
           <p className="text-white/90 text-lg sm:text-xl lg:text-2xl font-medium mt-6 mb-8 tracking-wide">
-            Degens Don't Die. They Multiply.
+            Because Real Utility is Overrated
           </p>
           
           {/* CTA Buttons */}

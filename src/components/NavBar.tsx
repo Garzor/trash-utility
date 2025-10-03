@@ -15,7 +15,7 @@ const NavBar = () => {
 
   const leftNavLinks = [
     { name: 'Home', href: '#' },
-    { name: 'Characters', href: '#cast' }
+    { name: 'Utility', href: '#cast' }
   ];
 
   const rightNavLinks = [
