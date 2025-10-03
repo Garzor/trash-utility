@@ -106,7 +106,7 @@ const LoadingScreen = ({ onEnter }: LoadingScreenProps) => {
       <audio
         ref={hoverAudioRef}
         preload="auto"
-        src="/mega-horn-398654.mp3"
+        src="/button.mp3"
       />
     </div>
   );
