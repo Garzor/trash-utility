@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import logoTrashUtility from '/ChatGPT Image Oct 2, 2025 at 03_33_40 PM.png';
 
 interface LoadingScreenProps {
@@ -7,6 +7,7 @@ interface LoadingScreenProps {
 
 const LoadingScreen = ({ onEnter }: LoadingScreenProps) => {
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const hoverAudioRef = useRef<HTMLAudioElement | null>(null);
 
   const handleEnter = () => {
     setIsTransitioning(true);
@@ -16,20 +17,31 @@ const LoadingScreen = ({ onEnter }: LoadingScreenProps) => {
     }, 500);
   };
 
+  const handleMouseEnter = () => {
+    if (hoverAudioRef.current) {
+      hoverAudioRef.current.currentTime = 0;
+      hoverAudioRef.current.play().catch(console.error);
+    }
+  };
+
   return (
     <div className={`fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center transition-all duration-500 ${isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-black" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(124,58,237,0.1)_100%)]" />
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="/loadingscreenbg.png" 
+          alt="Loading Background" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
       {/* Loading Mascot */}
-      <div className="absolute bottom-4 sm:bottom-8 lg:bottom-12 left-4 sm:left-8 lg:left-12 z-20">
+      <div className="absolute bottom-0 left-4 sm:left-8 lg:left-12 z-20">
         <img
           src="/loadingmascot.png"
           alt="Loading Mascot"
-          className="h-56 sm:h-64 lg:h-72 object-contain drop-shadow-lg hover:scale-105 transition-transform duration-200"
+          className="h-80 sm:h-96 lg:h-[28rem] xl:h-[32rem] object-contain drop-shadow-lg hover:scale-105 transition-transform duration-200"
         />
       </div>
 
@@ -48,12 +60,14 @@ const LoadingScreen = ({ onEnter }: LoadingScreenProps) => {
         {/* Enter Button */}
         <button
           onClick={handleEnter}
+          onMouseEnter={handleMouseEnter}
           disabled={isTransitioning}
           className={`
-            px-12 py-4 bg-gradient-to-r from-purple-600 to-blue-600 
-            text-white font-bold text-xl rounded-2xl
+            px-16 py-6 bg-gradient-to-r from-purple-600 to-blue-600 
+            text-white font-bold text-2xl rounded-2xl
             shadow-lg hover:shadow-xl transform hover:scale-105 
             transition-all duration-300 relative overflow-hidden
+            cursor-pointer
             ${isTransitioning ? 'opacity-50 cursor-not-allowed' : 'hover:from-purple-500 hover:to-blue-500'}
           `}
         >
@@ -87,6 +101,13 @@ const LoadingScreen = ({ onEnter }: LoadingScreenProps) => {
           />
         ))}
       </div>
+
+      {/* Hidden Audio for Button Hover */}
+      <audio
+        ref={hoverAudioRef}
+        preload="auto"
+        src="/mega-horn-398654.mp3"
+      />
     </div>
   );
 };
