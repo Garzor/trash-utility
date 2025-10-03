@@ -36,8 +36,14 @@ const JoinTrashSection = () => {
   ];
 
   return (
-    <section id="join-trash" className="relative bg-black pt-8 sm:pt-12 pb-16 sm:pb-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section id="join-trash" className="relative bg-black pt-8 sm:pt-12 pb-16 sm:pb-24 overflow-hidden">
+      {/* Glitch/Static Effect Background */}
+      <div className="absolute inset-0">
+        <div className="glitch-static"></div>
+        <div className="glitch-lines"></div>
+      </div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Logo */}
         <div className="mb-12 sm:mb-16">
           <img
