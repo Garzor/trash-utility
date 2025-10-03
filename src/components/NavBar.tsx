@@ -14,13 +14,13 @@ const NavBar = () => {
   }, []);
 
   const leftNavLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'Utility', href: '#cast' }
+    { name: 'Home', href: '#hero' },
+    { name: 'Utility', href: '#trash-utility' }
   ];
 
   const rightNavLinks = [
     { name: 'Community', href: 'https://x.com/PumpCrew_' },
-    { name: 'About', href: '#' }
+    { name: 'About', href: '#join-trash' }
   ];
 
   return (

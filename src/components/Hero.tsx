@@ -23,7 +23,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden">
       {/* Background Video */}
       <video 
         className="absolute inset-0 w-full h-full object-cover"

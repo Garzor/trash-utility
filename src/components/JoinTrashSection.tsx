@@ -36,7 +36,7 @@ const JoinTrashSection = () => {
   ];
 
   return (
-    <section className="relative bg-black pt-8 sm:pt-12 pb-16 sm:pb-24">
+    <section id="join-trash" className="relative bg-black pt-8 sm:pt-12 pb-16 sm:pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Logo */}
         <div className="mb-12 sm:mb-16">
